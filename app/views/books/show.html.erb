@@ -1,0 +1,42 @@
+<div class="container px-5 px-sm-0">
+ <div class="row">
+  <div class="col-md-3">
+   <%= render partial: 'list', locals: {book: @book_new, user: @user} %>
+  </div>
+  <div class="col-md-8 offset-md-1">
+<h2>Book detail</h2>
+<table class="table">
+  <tbody>
+
+  <div>
+    <%= link_to book_path(@book) do %>
+  <% end %>
+  <tr>
+  <th>
+  <%= link_to user_path(@user) do %>
+   <%= image_tag @user.get_profile_image(100,100)%>
+   <br>
+   <%=@book.user.name %>
+  <% end %>
+  </th>
+    <th><%= link_to @book.title, book_path(@book)%></th>
+    <th><%= @book.body %></th>
+    <% if @book.user == current_user %>
+    <th>
+    <%= link_to "Edit", edit_book_path(@book), class:"btn btn-success" %>
+    </th>
+    <th>
+    <%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に削除しますか？"}, class:"btn btn-danger" %>
+    </th>
+  <% end %>
+  <td>
+
+  </td>
+  </tr>
+  </div>
+
+  </tbody>
+</table>
+</div>
+</div>
+</div>

@@ -1,0 +1,37 @@
+<% flash.each do |message_type, message| %>
+  <%= content_tag :div, message, class: message_type %>
+<% end %>
+<div class="container">
+ <div class="row">
+  <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+   <div class=" text-center"  >
+    <h1>welcome to <i class="fa-solid fa-book"></i> Bookers !!</h1>
+   </div>
+   <div class="mx-auto" style="margin: 20px;">
+    In <strong><i class="fa-solid fa-book"></i>Bookers</strong>,<br>
+    you can share and exchange your opinions , inpressions , and emotions<br>
+    about various books!
+   </div>
+   </div>
+  </div>
+ </div>
+ 
+<div class="row" >
+ <div class="mx-auto">
+ <li class="btn" >
+  <%= link_to new_user_session_path, class:"btn btn-primary btn-block" do %>
+  Log in
+  <% end %>
+ </li>
+</div>
+</div>
+<div class="row" >
+<div class="mx-auto">
+ <li class="btn">
+  <%= link_to new_user_registration_path, class:"btn btn-success btn-block" do %>
+  Sign up
+  <% end %>
+ </li>
+</div>
+</div>
+ 
